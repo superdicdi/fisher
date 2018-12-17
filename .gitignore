@@ -102,3 +102,18 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+dist
+build
+db.ini
+deploy_key_rsa
+.idea/
+*.idea/
+.DS_Store
+uploads/
