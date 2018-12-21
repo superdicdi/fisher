@@ -1,3 +1,5 @@
+import os
+
 from werkzeug.local import LocalStack
 
 __author__ = "TuDi"
@@ -26,12 +28,8 @@ import threading
 # t.start()
 #
 # print("four", local.top)
-data = {1, 2, 4}
-a = []
-b = [book for book in data]
-print(a)
-print(b)
-
+for i in {"name": "yaya", "age": 18}.items():
+    print(i)
 
 
 

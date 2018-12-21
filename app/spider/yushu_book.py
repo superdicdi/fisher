@@ -19,7 +19,7 @@ class YuShuBook:
 
         if data:
             self.total = 1
-            self.books = self._cut_book_data(data)
+            self.books.append(self._cut_book_data(data))
 
     def __fill__collection(self, data):
         if data["books"]:
