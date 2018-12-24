@@ -1,11 +1,13 @@
 from sqlalchemy import Column, Integer, String
-from app import db
+
+# from app import db
+from app.models.base import Base
 
 __author__ = "TuDi"
 __date__ = "2018/12/18 下午2:08"
 
 
-class Book7(db.Model):
+class Book(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     title = Column(String(50), nullable=False)
@@ -20,5 +22,5 @@ class Book7(db.Model):
     image = Column(String(50))
 
 
-if __name__ == '__main__':
-    db.create_all()
+# if __name__ == '__main__':
+#     db.create_all()

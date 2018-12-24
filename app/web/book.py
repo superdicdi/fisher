@@ -26,12 +26,13 @@ def search():
             books.search_by_isbn(q)
             # return json.dumps(result), 200, {"content-type": "application/json"}
             # return json.dumps(result, default=lambda o: o.__dict__)
-    print("aa")
+    # return render_template("test.html", data={"a": "", "b": 2})
     return render_template("search_result.html", books=books, form=form)
 
 
-@web.route("/book_detail/")
-def book_detail():
-    pass
-
+@web.route("/book/<isbn>/detail/")
+def book_detail(isbn):
+    book = YuShuBook()
+    book.search_by_isbn(isbn)
+    return render_template("book_detail.html", book=book.first, wishes=[], gifts=[])
 

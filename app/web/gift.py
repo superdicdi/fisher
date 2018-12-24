@@ -1,11 +1,12 @@
-
+from flask_login import login_required
 from . import web
 __author__ = '七月'
 
 
-@web.route('/my/gifts')
+@web.route('/my/gifts/')
+@login_required
 def my_gifts():
-    pass
+    return "my gifts"
 
 
 @web.route('/gifts/book/<isbn>')

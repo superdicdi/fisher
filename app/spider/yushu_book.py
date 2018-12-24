@@ -35,7 +35,12 @@ class YuShuBook:
             "author": "、".join(data["author"]),
             "price": data["price"],
             "summary": data["summary"] or "暂无",
-            "image": data["image"]
+            "image": data["image"],
+            "isbn": data["isbn"],
+            "pubdate": data["pubdate"],
+            "binding": data["binding"] or "暂无信息",
+            "intro": " / ".join(
+                filter(lambda x: True if x else False, ["、".join(data["author"]), data["publisher"], data["price"]]))
         }
         return book
 
@@ -52,3 +57,7 @@ class YuShuBook:
     @staticmethod
     def calculate_page(page):
         return (page - 1) * current_app.config["PER_PAGE"]
+
+    @property
+    def first(self):
+        return self.books[0] if self.books else {}
