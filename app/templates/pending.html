@@ -38,7 +38,7 @@
                     </div>
                     <div class="col-md-2 flex-vertical">
                         {% if drift.you_are == 'gifter' %}
-                            {% if drift.status.value == 1 %}
+                            {% if drift.status == 1 %}
                                 <a href="{{ url_for('web.mailed_drift', did=drift.drift_id) }}">
                                     <span class="btn-normal">已邮寄</span>
                                 </a>
@@ -48,7 +48,7 @@
                             {% endif %}
                         {% endif %}
                         {% if drift.you_are == 'requester' %}
-                            {% if drift.status.value == 1 %}
+                            {% if drift.status == 1 %}
                                 <a href="{{ url_for('web.redraw_drift', did=drift.drift_id) }}">
                                         <span class="btn-normal">撤 销</span>
                                 </a>
@@ -58,8 +58,8 @@
                 </div>
                 <div style="margin-top:20px;" class="row message-container">
                     <div class="col-md-12">
-                        {% if drift.you_are == 'receiver' %}
-                            {% set message_flag = '他的留言：' %}
+                        {% if drift.you_are == 'gifter' %}
+                            {% set message_flag = 'Ta的留言：' %}
                         {% else %}
                             {% set message_flag = '你的留言：' %}
                         {% endif %}

@@ -28,15 +28,13 @@ import threading
 # t.start()
 #
 # print("four", local.top)
-for i in {"name": "yaya", "age": 18}.items():
-    print(i)
+a = [{'name':'Andy','age':25},{'name':'Joe','age':40},
+	{'name':'Ken','age':16},{'name':'Julia','age':31}
+]
+# b =sorted(a, key=lambda x : x["age"])
+# print(b)
+print(type(a))
+a.sort(key=lambda x : x["age"])
 
-
-
-
-
-
-
-
-
-
+print(a)
+print(type(a))
